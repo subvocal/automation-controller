@@ -1,0 +1,42 @@
+extends layout
+
+block content
+    script.
+        let thermostatSetting = #{data.desiredTemperature};
+        let currentTemperature = 65;
+    section.section
+        .container
+            h1.title.has-text-grey.has-text-centered
+                p Thermostat set to:
+                p
+                    span.thermostat #{data.desiredTemperature}˚ 
+                    span.icon.has-text-danger
+                        a(href='/').temp-up
+                            i.fas.fa-chevron-up.has-text-danger
+                    span.icon.has-text-info
+                        a(href='/').temp-down
+                            i.fas.fa-chevron-down.has-text-info
+                
+            h1.title.has-text-grey.has-text-centered
+                p Current status
+                p 
+                    if data.currentTemperature == "unknown"
+                        | --˚
+                    else
+                        | #{data.currentTemperature}˚
+                    - const currentState = "on"
+                    if data.weemoState == "on"
+                        span.icon.has-text-danger
+                            i.fas.fa-fire 
+                        span.icon.has-text-success
+                            i.fas.fa-plug
+                    else if data.weemoState == "off"
+                        span.icon.has-text-grey
+                            i.fas.fa-fire
+                        span.icon.has-text-grey
+                            i.fas.fa-plug
+                    else
+                        span.icon.has-text-grey
+                            i.fas.fa-sad
+
+            

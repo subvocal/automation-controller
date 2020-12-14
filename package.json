@@ -1,0 +1,31 @@
+{
+    "name": "automation-controller",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon --exec babel-node init.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "Victor Soares <vsoares@subvocal.com>",
+    "license": "MIT",
+    "dependencies": {
+        "@hapi/hapi": "^20.0.3",
+        "@hapi/inert": "^6.0.3",
+        "@hapi/vision": "^6.0.1",
+        "dotenv": "^8.2.0",
+        "moment": "^2.29.1",
+        "pug": "^3.0.0",
+        "sequelize": "^6.3.5",
+        "slug": "^4.0.2",
+        "sqlite3": "^5.0.0"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.12.10",
+        "@babel/core": "^7.12.10",
+        "@babel/node": "^7.12.10",
+        "@babel/preset-env": "^7.12.10",
+        "nodemon": "^2.0.6"
+    }
+}
